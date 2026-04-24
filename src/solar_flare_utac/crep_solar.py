@@ -15,6 +15,7 @@ P — permutation entropy (inverted)   (GOES 1–8 Å flux regularity)
 """
 from __future__ import annotations
 
+import importlib.util as _ilu
 import math
 from dataclasses import dataclass
 
@@ -23,13 +24,9 @@ from numpy.typing import NDArray
 
 from .constants import GAMMA_SOLAR, SEED, SIGMA_CREP
 
-
-# ── genesis-os stubs ───────────────────────────────────────────────────────────
-try:
-    from genesis.core.crep import CREPTensor  # type: ignore[import-not-found]
-    _GENESIS_AVAILABLE = True
-except ImportError:
-    _GENESIS_AVAILABLE = False
+# ── genesis-os availability probe ─────────────────────────────────────────────
+_GENESIS_AVAILABLE = _ilu.find_spec("genesis") is not None
+del _ilu
 
 
 @dataclass
@@ -110,7 +107,6 @@ class SolarCREP:
         Increases as H approaches H_THRESHOLD — more organised twist.
         Nominally very small (solar field geometry is complex).
         """
-        from .constants import H_THRESHOLD
         base = 0.01
         ramp = 0.05 * math.tanh(10.0 * (H - 0.3))
         jitter = float(self.rng.normal(0.0, 0.003))

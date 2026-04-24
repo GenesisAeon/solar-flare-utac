@@ -17,7 +17,7 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
-from . import __version__, GAMMA_SOLAR, SIGMA_CREP
+from . import GAMMA_SOLAR, SIGMA_CREP, __version__
 from .system import SolarFlareUTAC
 
 app = typer.Typer(

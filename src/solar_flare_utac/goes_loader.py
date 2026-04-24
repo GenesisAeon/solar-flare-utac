@@ -6,7 +6,6 @@ Reproduces the statistical properties of the 47-year GOES 1–8 Å record
 from __future__ import annotations
 
 import math
-from typing import TYPE_CHECKING
 
 import numpy as np
 from numpy.typing import NDArray
@@ -19,9 +18,6 @@ from .constants import (
     SOLAR_CYCLE_YEARS,
     XCLASS_PER_CYCLE,
 )
-
-if TYPE_CHECKING:
-    pass
 
 
 class GOESLoader:
@@ -72,7 +68,7 @@ class GOESLoader:
         )
 
         decay_steps = max(1, int(1.5 / cadence_hours))
-        for ti, peak in zip(t_idx, flare_peaks):
+        for ti, peak in zip(t_idx, flare_peaks, strict=False):
             t_end = min(n_steps, ti + decay_steps * 6)
             dt = np.arange(t_end - ti, dtype=np.float64)
             # Fast rise (1 step), exponential decay

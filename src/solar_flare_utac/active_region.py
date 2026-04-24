@@ -13,7 +13,6 @@ where λ(H, Γ) is the CREP-gated reconnection rate supplied by
 from __future__ import annotations
 
 import numpy as np
-from numpy.typing import NDArray
 
 from .constants import (
     E_MAX_J,
@@ -21,9 +20,7 @@ from .constants import (
     H_THRESHOLD,
     LAMBDA_QUIET,
     R_BUILDUP,
-    RELAXATION_TAU_HOURS,
     SEED,
-    SIGMA_CREP,
 )
 
 

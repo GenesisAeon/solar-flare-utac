@@ -18,7 +18,6 @@ from .constants import (
     H_THRESHOLD,
     LAMBDA_ERUPTIVE,
     LAMBDA_QUIET,
-    RECONNECTION_TIMESCALE_MIN,
     SIGMA_CREP,
     THETA_PT,
 )
@@ -62,7 +61,7 @@ class ReconnectionThreshold:
         Gamma : float
             CREP coupling parameter Γ ≥ 0.
         """
-        if H < self.h_threshold or Gamma <= self.theta_pt:
+        if self.h_threshold > H or Gamma <= self.theta_pt:
             return LAMBDA_QUIET
 
         crep_gate = math.tanh(SIGMA_CREP * Gamma)
@@ -70,7 +69,7 @@ class ReconnectionThreshold:
 
     def is_unstable(self, H: float, Gamma: float) -> bool:
         """True when the current-sheet instability criterion is met."""
-        return H >= self.h_threshold and Gamma > self.theta_pt
+        return self.h_threshold <= H and Gamma > self.theta_pt
 
     # ── physics diagnostics ────────────────────────────────────────────────────
 

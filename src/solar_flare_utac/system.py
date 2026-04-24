@@ -20,14 +20,14 @@ Ethics Gate Light (Phase H) is applied inside run_cycle().
 """
 from __future__ import annotations
 
+import importlib.util as _ilu
 import math
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import numpy as np
 
 from .active_region import MagneticActiveRegion
 from .constants import (
-    E_MAX_J,
     ETHICS_H_MAX,
     ETHICS_TENSION_MAX,
     GAMMA_SOLAR,
@@ -46,15 +46,9 @@ from .goes_loader import GOESLoader
 from .reconnection import ReconnectionThreshold
 from .superflare import SuperflareStatistics
 
-# ── genesis-os stubs ───────────────────────────────────────────────────────────
-try:
-    from genesis.core.utac import UTAC_ODE, UTACParams  # type: ignore[import-not-found]
-    from genesis.core.crep import CREPTensor  # type: ignore[import-not-found]
-    from genesis.mirror.phase_loop import PhaseTransitionLoop  # type: ignore[import-not-found]
-    from genesis.core.lagrangian import UnifiedLagrangian  # type: ignore[import-not-found]
-    _GENESIS_AVAILABLE = True
-except ImportError:
-    _GENESIS_AVAILABLE = False
+# ── genesis-os availability probe ─────────────────────────────────────────────
+_GENESIS_AVAILABLE = _ilu.find_spec("genesis") is not None
+del _ilu
 
 
 # ── Ethics Gate ────────────────────────────────────────────────────────────────
@@ -269,7 +263,7 @@ class SolarFlareUTAC:
                 "cycle_count": self._cycle_count,
                 "genesis_available": _GENESIS_AVAILABLE,
             },
-            "created": datetime.now(timezone.utc).isoformat(),
+            "created": datetime.now(UTC).isoformat(),
         }
 
     # ── extended interface ─────────────────────────────────────────────────────

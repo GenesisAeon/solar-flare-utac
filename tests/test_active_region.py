@@ -28,7 +28,6 @@ class TestMagneticActiveRegion:
         assert abs(rate) < 1e-9
 
     def test_step_advances_time(self, ar: MagneticActiveRegion) -> None:
-        h_before = ar.H
         ar.step(dt_hours=0.1, lambda_reconnect=0.0)
         # H should change (buildup dominant)
         assert ar._time_hours > 0.0

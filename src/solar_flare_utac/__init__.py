@@ -19,8 +19,8 @@ Diamond-template contract
     SolarFlareUTAC.to_zenodo_record()  → dict
 """
 
+from .constants import GAMMA_SOLAR, PACKAGE_REGISTRY_ENTRY, SIGMA_CREP, SOLAR_TARGETS
 from .system import SolarFlareUTAC
-from .constants import GAMMA_SOLAR, SIGMA_CREP, SOLAR_TARGETS, PACKAGE_REGISTRY_ENTRY
 
 __version__ = "0.1.0"
 __author__ = "Johann Römer / MOR Research Collective"

@@ -10,12 +10,8 @@ SOLAR_TARGETS (constants.py), which are derived from:
 from __future__ import annotations
 
 import math
-from typing import Any
-
-import numpy as np
 
 from .constants import SOLAR_TARGETS
-from .goes_loader import GOESLoader
 from .superflare import SuperflareStatistics
 
 
