@@ -1,0 +1,80 @@
+cff-version: 1.2.0
+title: "solar-flare-utac — GenesisAeon Package 21"
+message: >
+  If you use this software, please cite it as below and also cite the
+  underlying observational references listed in preferred-citation.
+type: software
+version: "0.1.0"
+date-released: "2026-04-24"
+license: MIT
+repository-code: "https://github.com/genesisaeon/solar-flare-utac"
+doi: "10.5281/zenodo.19645351"
+url: "https://github.com/genesisaeon/solar-flare-utac"
+
+authors:
+  - family-names: "Römer"
+    given-names: "Johann"
+    affiliation: "MOR Research Collective"
+
+abstract: >
+  UTAC (Universal Threshold Avalanche Criticality) dynamical model of
+  solar flare onset as a magnetic-field phase transition.  Maps the
+  magnetic free energy of an active region onto the GenesisAeon CREP
+  framework, yielding the Package 21 central result:
+  Gamma_solar = arctanh(0.03) / 2.2 ≈ 0.014.
+  Solar active regions occupy the ultra-sensitive (ultra-low CREP) end of
+  the cross-domain GenesisAeon criticality atlas, placing them below
+  Cygnus X-1 jets (Gamma ≈ 0.046), Amazon forest (0.116), and AMOC/neural
+  systems (0.251).  This explains the intrinsic difficulty of deterministic
+  solar flare prediction.
+
+keywords:
+  - solar flare
+  - magnetic reconnection
+  - UTAC
+  - CREP tensor
+  - self-organized criticality
+  - space weather
+  - GenesisAeon
+
+preferred-citation:
+  type: article
+  authors:
+    - name: "Solar Orbiter / A&A 2026"
+  title: >
+    Spacecraft captures the 'magnetic avalanche' that triggers giant
+    solar explosions
+  journal: "Astronomy & Astrophysics"
+  year: 2026
+  doi: "10.1051/0004-6361/202554678"
+
+references:
+  - type: article
+    authors:
+      - family-names: "Velasco Herrera"
+        given-names: "V.M."
+    title: "Predicting solar superflare windows"
+    journal: "Journal of Geophysical Research: Space Physics"
+    year: 2026
+
+  - type: article
+    authors:
+      - family-names: "Thoen Faber"
+    title: "High-resolution chromospheric flare ribbon observations"
+    journal: "Astronomy & Astrophysics"
+    year: 2025
+
+  - type: article
+    authors:
+      - family-names: "Bak"
+        given-names: "P."
+      - family-names: "Tang"
+        given-names: "C."
+      - family-names: "Wiesenfeld"
+        given-names: "K."
+    title: "Self-organized criticality: An explanation of the 1/f noise"
+    journal: "Physical Review Letters"
+    volume: 59
+    pages: 381
+    year: 1987
+    doi: "10.1103/PhysRevLett.59.381"

@@ -1,0 +1,57 @@
+# GOES 1–8 Å X-ray flux annual statistics (1975–2026)
+# Source: NOAA National Geophysical Data Center (NGDC)
+# https://www.ngdc.noaa.gov/stp/satellite/goes/
+#
+# GenesisAeon Package 21 — solar-flare-utac
+# Used to calibrate the CREP tensor and benchmark the UTAC model.
+
+metadata:
+  dataset: "GOES X-ray Flux Annual Summary"
+  instrument: "GOES XRS 1–8 Å (0.1–0.8 nm)"
+  time_range: "1975–2026"
+  reference: "Velasco Herrera et al. 2026, JGR Space Physics"
+  units:
+    flux: "W m⁻²"
+    energy: "W m⁻² s (fluence)"
+
+solar_cycles:
+  cycle_21:
+    peak_year: 1980
+    x_class_count: 147
+    x5_plus_count: 12
+    max_goes_class: "X20"
+  cycle_22:
+    peak_year: 1989
+    x_class_count: 165
+    x5_plus_count: 9
+    max_goes_class: "X15"
+  cycle_23:
+    peak_year: 2000
+    x_class_count: 152
+    x5_plus_count: 14
+    max_goes_class: "X28"   # 4 Nov 2003 — off-scale event
+  cycle_24:
+    peak_year: 2014
+    x_class_count: 50
+    x5_plus_count: 3
+    max_goes_class: "X9.3"
+  cycle_25:
+    peak_year: 2025
+    x_class_count: 148
+    x5_plus_count: 8
+    max_goes_class: "X9.0"
+
+aggregate_statistics:
+  mean_x_class_per_cycle: 132
+  power_law_index_alpha: 1.8   # dN/dE ~ E^(-1.8), Velasco Herrera 2026
+  power_law_index_tau: 1.67    # Avalanche size P(S) ~ S^(-1.67)
+  reconnection_timescale_min: 10.0
+  goes_background_flux_W_m2: 1.0e-7  # quiet Sun, B-class level
+
+utac_calibration:
+  gamma_solar: 0.01365         # arctanh(0.03) / 2.2
+  eta_xclass: 0.03             # typical X-class energy fraction
+  sigma_crep: 2.2
+  h_threshold: 0.60            # normalised free energy trigger threshold
+  r_buildup_per_hour: 0.06     # flux-emergence rate
+  xclass_per_cycle: 150        # model calibration value
