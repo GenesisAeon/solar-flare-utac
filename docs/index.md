@@ -1,37 +1,53 @@
-# Diamond Setup
+# solar-flare-utac
 
-**Universal Python project scaffold** — generate professional, CI-ready project skeletons in seconds.
+**GenesisAeon Package 21** — Solar Flare Magnetic Avalanche Threshold
 
-No cookiecutter, no Jinja2, no magic. Just a clean CLI, sensible templates, and a validator that keeps your projects healthy.
+[![CI](https://github.com/genesisaeon/solar-flare-utac/actions/workflows/ci.yml/badge.svg)](https://github.com/genesisaeon/solar-flare-utac/actions/workflows/ci.yml)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE)
 
-## Quickstart
+Models **solar flare onset as a magnetic-field UTAC phase transition**.
+
+## Central Result
+
+> **Γ_solar = arctanh(0.03) / 2.2 ≈ 0.014**
+
+Solar active regions occupy the **ultra-sensitive** (ultra-low CREP) end of the
+GenesisAeon cross-domain criticality atlas.
+
+## Quick Start
 
 ```bash
-pip install diamond-setup
-# or with uv:
-uv tool install diamond-setup
+pip install solar-flare-utac
 ```
 
-```bash
-diamond scaffold my-new-tool
-cd my-new-tool && uv sync --dev && uv run pytest
+```python
+from solar_flare_utac import SolarFlareUTAC
+
+model = SolarFlareUTAC(seed=42)
+state = model.run_cycle(duration_hours=72)
+
+print(state['crep_state'])   # {C, R, E, P, Gamma ≈ 0.014}
+print(state['utac_state'])   # {H, dH_dt, H_star, K_eff}
 ```
 
-## Why Diamond Setup?
+## CREP Criticality Spectrum
 
-| Feature | diamond-setup | cookiecutter | copier |
-|---------|:---:|:---:|:---:|
-| Zero config needed | ✅ | ❌ | ❌ |
-| Built-in validator | ✅ | ❌ | ❌ |
-| Pure Python templates | ✅ | ❌ | ❌ |
-| `--dry-run` support | ✅ | ❌ | ✅ |
-| Extensible presets | ✅ | ✅ | ✅ |
+| Domain | Γ | η | Character |
+|---|---|---|---|
+| **Solar Flare (P21)** | **0.014** | **1%** | **Ultra-sensitive** |
+| Cygnus X-1 Jet | 0.046 | 5% | Hair-trigger |
+| Amazon Rainforest | 0.116 | 12% | Fragile |
+| AMOC Ocean | 0.251 | 50% | Homeostatic |
+| Neural Criticality | 0.251 | 50% | Homeostatic (!) |
+| BTW Sandpile | 0.296 | 58% | Robust SOC |
 
-## Commands
+## Diamond-Template Contract
 
-| Command | Description |
-|---------|-------------|
-| `diamond scaffold <name>` | Create a new project |
-| `diamond list-templates` | Show available templates |
-| `diamond validate [path]` | Check a project's health |
-| `diamond version` | Show version |
+```python
+model.run_cycle(duration_hours=72)  → dict
+model.get_crep_state()              → {C, R, E, P, Gamma}
+model.get_utac_state()              → {H, dH_dt, H_star, K_eff}
+model.get_phase_events()            → list[dict]
+model.to_zenodo_record()            → dict
+```

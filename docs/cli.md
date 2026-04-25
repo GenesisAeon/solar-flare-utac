@@ -1,88 +1,66 @@
 # CLI Reference
 
-## `diamond scaffold`
+The `solar-utac` command-line interface provides access to all UTAC simulation
+and analysis functions.
 
-Create a new project from a template.
-
-```
-Usage: diamond scaffold [OPTIONS] PROJECT_NAME
-
-Arguments:
-  PROJECT_NAME  Name of the new project (kebab-case recommended)
-
-Options:
-  -t, --template TEXT       Template to use [default: minimal]
-  -o, --output-dir PATH     Parent directory for the new project
-  --author TEXT             Author name
-  --description TEXT        Short project description
-  --python-version TEXT     Minimum Python version (e.g. 3.11)
-  --dry-run                 Preview files without writing them
-```
-
-**Examples**
+## Installation
 
 ```bash
-# Minimal project in the current directory
-diamond scaffold my-lib
-
-# Genesis preset with custom author
-diamond scaffold my-physics-tool --template genesis --author "Ada Lovelace"
-
-# Preview what would be created
-diamond scaffold my-lib --dry-run
-
-# Output to a specific directory
-diamond scaffold my-lib --output-dir ~/projects
+pip install solar-flare-utac
 ```
 
----
+## Commands
 
-## `diamond list-templates`
+### `solar-utac run`
 
-List all available templates with their descriptions.
+Run a UTAC simulation cycle for a solar active region.
 
 ```bash
-diamond list-templates
+solar-utac run --duration 72 --active-region AR3000 --seed 42
 ```
 
----
+| Option | Default | Description |
+|---|---|---|
+| `--duration` / `-d` | 72.0 | Cycle duration [hours] |
+| `--active-region` / `-ar` | `AR_synthetic` | Active region identifier |
+| `--seed` | 42 | Random seed |
 
-## `diamond validate`
+### `solar-utac flare-window`
 
-Validate a project directory against diamond-setup best practices.
-
-```
-Usage: diamond validate [PATH]
-
-Arguments:
-  PATH  Project directory to validate [default: current directory]
-```
-
-Checks performed:
-
-| Check | Level |
-|-------|-------|
-| `pyproject.toml` present | **Error** |
-| `src/` layout present | Warning |
-| `tests/` directory present | Warning |
-| `.github/workflows/` present | Warning |
-| `README.md` present | Warning |
-| `.gitignore` present | Warning |
+Estimate flare probability window over the next N days.
 
 ```bash
-# Validate the current directory
-diamond validate
-
-# Validate a specific project
-diamond validate path/to/my-project
+solar-utac flare-window --horizon 7
 ```
 
----
+### `solar-utac gamma-crep-spectrum`
 
-## `diamond version`
-
-Print the installed version.
+Print the complete GenesisAeon CREP Criticality Spectrum (Packages 17–22).
 
 ```bash
-diamond version
+solar-utac gamma-crep-spectrum
+```
+
+### `solar-utac benchmark`
+
+Validate the model against `SOLAR_TARGETS` (GOES catalog + Solar Orbiter data).
+
+```bash
+solar-utac benchmark
+```
+
+### `solar-utac zenodo-export`
+
+Export a Zenodo-compatible metadata record to stdout.
+
+```bash
+solar-utac zenodo-export > record.json
+```
+
+### `solar-utac version`
+
+Show the installed version.
+
+```bash
+solar-utac version
 ```
