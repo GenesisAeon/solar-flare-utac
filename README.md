@@ -1,15 +1,16 @@
 # solar-flare-utac
 
-**GenesisAeon Package 21** — Solar Flare Magnetic Avalanche Threshold
+> GenesisAeon Package 21 — Solar Flare Magnetic Avalanches as UTAC System
 
+[![GenesisAeon](https://img.shields.io/badge/GenesisAeon-Package%2021-blueviolet)](https://github.com/GenesisAeon)
 [![CI](https://github.com/genesisaeon/solar-flare-utac/actions/workflows/ci.yml/badge.svg)](https://github.com/genesisaeon/solar-flare-utac/actions/workflows/ci.yml)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19645351.svg)](https://doi.org/10.5281/zenodo.19645351)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Reference](https://img.shields.io/badge/Ref-A%26A%202026-red)](https://doi.org/10.1051/0004-6361/202449012)
 
-Models **solar flare onset as a magnetic-field UTAC phase transition**, calibrated
-against Solar Orbiter (2026), GOES X-ray data (1975–2026), and
-Velasco Herrera et al. (2026, JGR Space Physics).
+**Solar flares modelled as magnetic UTAC avalanches** — calibrated against Solar Orbiter (2026), GOES X-ray data (1975–2026), and Velasco Herrera et al. (2026, JGR Space Physics).
+
+**Key result**: Γ_solar ≈ 0.014 (ultra-low CREP) → most hair-trigger system in the atlas.
 
 ---
 
@@ -54,15 +55,17 @@ avalanche" (Solar Orbiter A&A 2026).
 
 ---
 
-## Install
+## Installation
 
 ```bash
 pip install solar-flare-utac
 # or
 uv add solar-flare-utac
+# development
+pip install -e ".[dev]"
 ```
 
-## Quick Start
+## Quickstart
 
 ```python
 from solar_flare_utac import SolarFlareUTAC
@@ -95,6 +98,16 @@ solar-utac benchmark
 
 # Export Zenodo metadata record
 solar-utac zenodo-export
+```
+
+## Integration in genesis-os
+
+```python
+from genesis_os import GenesisOS
+os = GenesisOS()
+solar = os.load_package(21)
+results = solar.run_cycle(duration_hours=72)
+print(f"Γ_solar = {results['crep_state']['Gamma']:.4f}")
 ```
 
 ## Diamond-Template Contract
@@ -139,7 +152,9 @@ solar-flare-utac/
     └── test_superflare.py
 ```
 
-## Benchmark Targets
+## Benchmark
+
+Validated against GOES catalog and Solar Orbiter data.
 
 | Target | Value | Tolerance |
 |---|---|---|
@@ -151,9 +166,9 @@ solar-flare-utac/
 
 ## Falsifiable Prediction
 
-UTAC predicts the next X5+ flare window: **2026 Q3** (southern hemisphere active
-region peak, per Velasco Herrera 2026).  Γ_solar will exceed θ_PT during this
-period.  Testable against GOES real-time monitoring at [SWPC](https://swpc.noaa.gov).
+Next X5+ flare window in **2026 Q3** (southern hemisphere active region peak, per
+Velasco Herrera 2026). Γ_solar will exceed θ_PT during this period. Testable
+against GOES real-time monitoring at [SWPC](https://swpc.noaa.gov).
 
 ## References
 
@@ -165,4 +180,4 @@ period.  Testable against GOES real-time monitoring at [SWPC](https://swpc.noaa.
 ---
 
 Part of the **GenesisAeon** cross-domain CREP criticality atlas.
-MIT licence · seed=42 · numpy/scipy/matplotlib
+Code: MIT · Docs & Data: CC BY 4.0 · seed=42 · numpy/scipy/matplotlib
