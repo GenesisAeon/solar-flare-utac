@@ -9,6 +9,7 @@ import math
 
 import numpy as np
 from numpy.typing import NDArray
+from scipy.integrate import trapezoid as _trapezoid
 
 from .constants import (
     GOES_END_YEAR,
@@ -144,7 +145,7 @@ class GOESLoader:
                         "peak_time_h": float(times[start_i + peak_off]),
                         "end_time_h": float(times[end_i - 1]),
                         "peak_flux_W_m2": float(seg[peak_off]),
-                        "fluence": float(np.trapz(seg, times[start_i:end_i])),
+                        "fluence": float(_trapezoid(seg, times[start_i:end_i])),
                         "duration_h": float(times[end_i - 1] - times[start_i]),
                     }
                 )
