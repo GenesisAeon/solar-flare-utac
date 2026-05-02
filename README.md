@@ -1,11 +1,15 @@
 # solar-flare-utac
 
-> GenesisAeon Package 21 — Solar Flare Magnetic Avalanches as UTAC System
+> GenesisAeon Package 22 — Solar Flare Magnetic Avalanches as UTAC System
 
-[![GenesisAeon](https://img.shields.io/badge/GenesisAeon-Package%2021-blueviolet)](https://github.com/GenesisAeon)
+<p align="center">
+  <a href="https://doi.org/10.5281/zenodo.19645351"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.19645351.svg" alt="DOI (GenesisAeon Whitepaper)"/></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="GPLv3 License"/></a>
+  <a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://img.shields.io/badge/docs-CC%20BY%204.0-lightblue.svg" alt="CC BY 4.0"/></a>
+  <a href="https://github.com/GenesisAeon/genesis-os"><img src="https://img.shields.io/badge/part%20of-genesis--os-blueviolet" alt="Part of genesis-os"/></a>
+  <img src="https://img.shields.io/badge/UTAC-package%2022-orange" alt="Package 22"/>
+</p>
 [![CI](https://github.com/genesisaeon/solar-flare-utac/actions/workflows/ci.yml/badge.svg)](https://github.com/genesisaeon/solar-flare-utac/actions/workflows/ci.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19645351.svg)](https://doi.org/10.5281/zenodo.19645351)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Reference](https://img.shields.io/badge/Ref-A%26A%202026-red)](https://doi.org/10.1051/0004-6361/202449012)
 
 **Solar flares modelled as magnetic UTAC avalanches** — calibrated against Solar Orbiter (2026), GOES X-ray data (1975–2026), and Velasco Herrera et al. (2026, JGR Space Physics).

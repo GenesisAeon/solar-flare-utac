@@ -1,0 +1,33 @@
+{
+  "title": "solar-flare-utac v0.1.0: UTAC Analysis of Solar Flare Criticality and Magnetospheric Dynamics",
+  "version": "0.1.0",
+  "upload_type": "software",
+  "access_right": "open",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Römer, Johann",
+      "affiliation": "GenesisAeon (Independent Researcher)"
+    }
+  ],
+  "description": "solar-flare-utac v0.1.0 applies UTAC (Universal Threshold Activation Criticality) to solar flare energy distributions and inter-flare waiting-time series from GOES/RHESSI catalogues. The UTAC-Logistic ODE recovers power-law scaling and critical magnetic energy release thresholds, demonstrating that solar activity exhibits self-organized criticality consistent with the UTAC framework. CREP metrics characterise coherence and emergence in magnetospheric dynamics. Part of the GenesisAeon UTAC application suite (genesis-os). Dual-licensed: GPLv3-or-later (code) + CC BY 4.0 (documentation).",
+  "keywords": [
+    "genesis-aeon", "utac", "crep", "criticality", "self-organized-criticality",
+    "mirror-machine", "fractal", "solar-flare", "space-weather",
+    "magnetosphere", "power-law", "emergence"
+  ],
+  "license": "GPL-3.0-or-later",
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.19645351",
+      "relation": "isPartOf",
+      "scheme": "doi",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://github.com/GenesisAeon/solar-flare-utac",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
