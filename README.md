@@ -181,6 +181,15 @@ against GOES real-time monitoring at [SWPC](https://swpc.noaa.gov).
 - Thoen Faber et al. 2025 — SST/CHROMIS high-resolution flare ribbons (140–200 km)
 - ESA CryoSat + Swarm 2026 — X-class geomagnetic storm measurements
 
+## Citation
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.PLACEHOLDER.svg)](https://doi.org/10.5281/zenodo.PLACEHOLDER)
+
+DOI will be assigned automatically on first GitHub Release once
+Zenodo–GitHub integration is enabled for this repo. Until then, cite the
+parent GenesisAeon whitepaper DOI linked at the top of this README
+(10.5281/zenodo.19645351).
+
 ---
 
 Part of the **GenesisAeon** cross-domain CREP criticality atlas.

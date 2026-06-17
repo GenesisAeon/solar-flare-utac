@@ -1,6 +1,6 @@
 [project]
 name = "solar-flare-utac"
-version = "0.1.0"
+version = "1.0.0"
 description = "Solar flare magnetic avalanche threshold — GenesisAeon Package 21"
 readme = "README.md"
 license = { text = "MIT" }
