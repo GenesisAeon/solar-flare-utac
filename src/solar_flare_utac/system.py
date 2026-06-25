@@ -246,7 +246,7 @@ class SolarFlareUTAC:
                 "solar flare", "UTAC", "CREP", "magnetic reconnection",
                 "space weather", "self-organized criticality", "GenesisAeon",
             ],
-            "license": "MIT",
+            "license": "GPL-3.0-or-later",
             "doi": PACKAGE_REGISTRY_ENTRY["zenodo"],
             "upload_type": "software",
             "related_identifiers": [

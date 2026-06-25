@@ -6,7 +6,9 @@ message: >
 type: software
 version: "0.1.0"
 date-released: "2026-04-24"
-license: MIT
+license: GPL-3.0-or-later
+# Documentation and data in this repository are separately licensed
+# under CC-BY-4.0; see LICENSE-DOCS.
 repository-code: "https://github.com/genesisaeon/solar-flare-utac"
 doi: "10.5281/zenodo.19645351"
 url: "https://github.com/genesisaeon/solar-flare-utac"

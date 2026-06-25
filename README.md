@@ -193,4 +193,4 @@ parent GenesisAeon whitepaper DOI linked at the top of this README
 ---
 
 Part of the **GenesisAeon** cross-domain CREP criticality atlas.
-Code: MIT · Docs & Data: CC BY 4.0 · seed=42 · numpy/scipy/matplotlib
+Code: GPLv3-or-later · Docs & Data: CC BY 4.0 · seed=42 · numpy/scipy/matplotlib
