@@ -4,7 +4,8 @@
 
 [![CI](https://github.com/genesisaeon/solar-flare-utac/actions/workflows/ci.yml/badge.svg)](https://github.com/genesisaeon/solar-flare-utac/actions/workflows/ci.yml)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE)
+[![License: GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](../LICENSE-CODE)
+[![Docs: CC BY 4.0](https://img.shields.io/badge/docs-CC%20BY%204.0-lightblue.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 Models **solar flare onset as a magnetic-field UTAC phase transition**.
 
