@@ -183,12 +183,7 @@ against GOES real-time monitoring at [SWPC](https://swpc.noaa.gov).
 
 ## Citation
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.PLACEHOLDER.svg)](https://doi.org/10.5281/zenodo.PLACEHOLDER)
-
-DOI will be assigned automatically on first GitHub Release once
-Zenodo–GitHub integration is enabled for this repo. Until then, cite the
-parent GenesisAeon whitepaper DOI linked at the top of this README
-(10.5281/zenodo.19645351).
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20843133.svg)](https://doi.org/10.5281/zenodo.20843133)
 
 ---
 

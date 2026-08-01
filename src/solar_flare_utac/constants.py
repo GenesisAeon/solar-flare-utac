@@ -76,7 +76,7 @@ PACKAGE_REGISTRY_ENTRY: dict = {
     "name": "solar-flare-utac",
     "domain": "solar-physics",
     "scale": "stellar",
-    "zenodo": "10.5281/zenodo.19645351",
+    "zenodo": "10.5281/zenodo.20843133",
     "reference": "10.1007/s41116-024-00039-4",
     "gamma": GAMMA_SOLAR,
     "eta": ETA_XCLASS,
